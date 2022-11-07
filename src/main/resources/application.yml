@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: @artifactId@
+
+
+rocketmq:
+  consumer:
+    isOnOff: true
+    groupName: ${spring.application.name}
+    namesrvAddr: 127.0.0.1:9876
+    topics: TestTopic~TestTag;TestTopic~hellTag;HellowTopic~HelloTag
+    consumeThreadMin: 5
+    consumeThreadMax: 32
+
+
