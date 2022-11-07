@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: @artifactId@
+
+rocketmq:
+  producer:
+    #是否开启自动配置
+    isOnOff: true
+    #发送同一类消息设置为同一个group
+    groupName: ${spring.application.name}
+    namesrvAddr: 127.0.0.1:9876
+    #消息最大长度
+    maxMessageSize: 4096
+    #发送消息超时时间
+    sendMsgTimeOut: 300
+    #发送消息失败重试次数
+    retryTimesWhenSendFailed: 2
+
+netty:
+  ws:
+    port: 8989
+    url: /ws
