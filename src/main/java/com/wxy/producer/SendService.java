@@ -50,6 +50,7 @@ public class SendService {
         SendResult send = defaultMQProducer.send(message);
         SendStatus sendStatus = send.getSendStatus();
         log.info("消息发送响应{}", send.toString());
+        log.info("测试");
         return sendStatus.toString();
     }
 
